@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
     let contacts : [Person]
     
     var body: some View {
-        List(contacts) {
-            Text($0.fullName)
+        NavigationView {
+            List(contacts) {
+                Text($0.fullName)
+            }
+            .navigationTitle("Contact List")
         }
     }
 }
