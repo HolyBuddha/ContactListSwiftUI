@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         TabView {
             HomeScreen(contacts: Person.getContacts())
@@ -15,7 +16,7 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("Home")
                 }
-            ContactDetail(contacts: Person.getContacts())
+            ContactDetailList(contacts: Person.getContacts())
                 .tabItem {
                     Image(systemName: "person.3")
                     Text("Detail")

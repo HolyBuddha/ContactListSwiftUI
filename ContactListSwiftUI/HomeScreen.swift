@@ -13,10 +13,13 @@ struct HomeScreen: View {
     
     var body: some View {
         NavigationView {
-            List(contacts) {
-                Text($0.fullName)
+            List(contacts) { contact in
+                NavigationLink(destination: ContactDetail(contact: contact)) {
+                ContactRow(contact: contact)
             }
             .navigationTitle("Contact List")
+            .navigationBarTitle("Back")
+            }
         }
     }
 }
