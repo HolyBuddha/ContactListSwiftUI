@@ -15,11 +15,11 @@ struct HomeScreen: View {
         NavigationView {
             List(contacts) { contact in
                 NavigationLink(destination: ContactDetail(contact: contact)) {
-                ContactRow(contact: contact)
+                    Text("\(contact.fullName)")
+            }
             }
             .navigationTitle("Contact List")
             .navigationBarTitle("Back")
-            }
         }
     }
 }

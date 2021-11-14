@@ -7,20 +7,16 @@
 
 import Foundation
 
-class Person: Identifiable {
+struct Person: Hashable, Identifiable {
+    
+    let id: UUID
     let name: String
     let surname: String
     let number: String
     let email: String
-    var fullName: String { "\(name) \(surname)" }
-    
-    init(name: String, surname: String, number: String, email: String) {
-        self.name = name
-        self.surname = surname
-        self.number = number
-        self.email = email
+    var fullName: String {
+        "\(name) \(surname)"
     }
-    
     
     static func getContacts() -> [Person] {
         
@@ -36,12 +32,12 @@ class Person: Identifiable {
         
         for index in 0..<dataManager.names.count {
             let person = Person(
+                id: UUID(),
                 name: names[index],
                 surname: surnames[index],
                 number: numbers[index],
                 email: emails[index]
             )
-            
             contactFromData.append(person)
         }
 
@@ -50,16 +46,17 @@ class Person: Identifiable {
     
     static func getContact() -> Person {
         
-        let dataManager = DataManager.shared
-        
-        let name = dataManager.names.randomElement() ?? ""
-        let surname = dataManager.surnames.randomElement() ?? ""
-        let number = dataManager.numbers.randomElement() ?? ""
-        let email = dataManager.emails.randomElement() ?? ""
-        
-        let person = Person(name: name, surname: surname, number: number, email: email)
-        
-        return person
+        Person(id: UUID(), name: "", surname: "", number: "", email: "")
+//        let dataManager = DataManager.shared
+//
+//        let name = dataManager.names.randomElement() ?? ""
+//        let surname = dataManager.surnames.randomElement() ?? ""
+//        let number = dataManager.numbers.randomElement() ?? ""
+//        let email = dataManager.emails.randomElement() ?? ""
+//
+//        let person = Person(name: name, surname: surname, number: number, email: email)
+//
+//        return person
     }
         
 }

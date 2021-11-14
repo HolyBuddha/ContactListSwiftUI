@@ -20,7 +20,7 @@ struct ContactDetail: View {
                     .frame(width: 100, height: 100, alignment: .center)
                 Spacer()
             }
-                ContactDetailRow(contact: Person.getContact())
+                ContactDetailRow(contact: contact)
         }
         .navigationTitle("\(contact.fullName)")
     }

@@ -11,17 +11,8 @@ struct ContactDetailRow: View {
     let contact: Person
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            HStack {
-                Image(systemName: "phone")
-                    .foregroundColor(.blue)
-                Text("\(contact.email)")
-            }
-            HStack {
-                Image(systemName: "mail")
-                    .foregroundColor(.blue)
-                Text("\(contact.number)")
-            }
+        Label(contact.number, systemImage: "phone")
+        Label(contact.email, systemImage: "mail")
     }
 }
 
@@ -30,4 +21,4 @@ struct ContactRow_Previews: PreviewProvider {
         ContactDetailRow(contact: Person.getContact())
     }
 }
-}
+
