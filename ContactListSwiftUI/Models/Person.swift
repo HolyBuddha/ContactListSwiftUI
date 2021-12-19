@@ -47,16 +47,7 @@ struct Person: Hashable, Identifiable {
     static func getContact() -> Person {
         
         Person(id: UUID(), name: "", surname: "", number: "", email: "")
-//        let dataManager = DataManager.shared
-//
-//        let name = dataManager.names.randomElement() ?? ""
-//        let surname = dataManager.surnames.randomElement() ?? ""
-//        let number = dataManager.numbers.randomElement() ?? ""
-//        let email = dataManager.emails.randomElement() ?? ""
-//
-//        let person = Person(name: name, surname: surname, number: number, email: email)
-//
-//        return person
+
     }
         
 }
